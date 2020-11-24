@@ -67,7 +67,17 @@ public class PasswordEncryptionDecryptionUsingJASYPT {
             System.out.println("Decrypted Value : " + decryptedPassword5);
             System.out.println();
 
-
+            if (args.length == 1 ) {
+                System.out.println("Using input encrypted text with StandardPBEStringEncryptor for Decryption using PBEWithHMACSHA512AndAES_256");
+                System.out.println("Encrypted Value : " + args[0]);
+                StandardPBEStringEncryptor decryptor6 = new StandardPBEStringEncryptor();
+                decryptor6.setPassword(mpCryptoPassword);
+                decryptor6.setAlgorithm("PBEWithHMACSHA512AndAES_256");
+                decryptor6.setIvGenerator(new RandomIvGenerator());
+                String decryptedPassword6 = decryptor6.decrypt(args[0]);
+                System.out.println("Decrypted Value : " + decryptedPassword6);
+                System.out.println();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
