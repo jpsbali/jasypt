@@ -50,22 +50,20 @@ public class PasswordEncryptionDecryptionUsingJASYPT {
             System.out.println();
 
             System.out.println("Using StrongTextEncryptor for Decryption");
-            String encryptedPassword4 = "UjiYBCjo9lzWG4XM2cDy7dmjNdYBOoyl";
-            System.out.println("Encrypted Value : " + encryptedPassword4);
+            System.out.println("Encrypted Value : " + encryptedPassword1);
             StrongTextEncryptor decryptor4 = new StrongTextEncryptor();
             decryptor4.setPassword(mpCryptoPassword);
-            String decryptedPassword4 = decryptor4.decrypt(encryptedPassword4);
+            String decryptedPassword4 = decryptor4.decrypt(encryptedPassword1);
             System.out.println("Decrypted Value : " + decryptedPassword4);
             System.out.println();
 
             System.out.println("Using StandardPBEStringEncryptor for Decryption using PBEWithHMACSHA512AndAES_256");
-            String encryptedPassword5 = "D3ujrRy/c+kvfmkS9D4+bSIxHG1SiGgv0LTRs7tBbKfQq/+YeZSHvHaJVc4BTZ47";
-            System.out.println("Encrypted Value : " + encryptedPassword5);
+            System.out.println("Encrypted Value : " + encryptedPassword2);
             StandardPBEStringEncryptor decryptor5 = new StandardPBEStringEncryptor();
             decryptor5.setPassword(mpCryptoPassword);
             decryptor5.setAlgorithm("PBEWithHMACSHA512AndAES_256");
             decryptor5.setIvGenerator(new RandomIvGenerator());
-            String decryptedPassword5 = decryptor5.decrypt(encryptedPassword5);
+            String decryptedPassword5 = decryptor5.decrypt(encryptedPassword2);
             System.out.println("Decrypted Value : " + decryptedPassword5);
             System.out.println();
 
